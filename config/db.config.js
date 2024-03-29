@@ -4,7 +4,6 @@ export async function connectDB() {
   try {
     const dbConnection = await mongoose.connect(process.env.MONGODB_URI);
     console.log('CONNECTED TO DB:', dbConnection.connections[0].name);
-    console.log(`SERVER RUNNING ON PORT: ${process.env.PORT}`);
   } catch (error) {
     console.log('CONNECTION ERROR MESSAGE:', error);
   }

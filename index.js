@@ -2,9 +2,13 @@ import 'dotenv/config';
 import express from 'express';
 import { connectDB } from './config/db.config.js';
 
-connectDB();
 const app = express();
+connectDB();
+
+app.listen(process.env.PORT, () => {
+  console.log(`SERVER RUNNING ON PORT: ${process.env.PORT}`);
+});
 
 app.get('/', (req, res) => {
-  res.send('Hello from Node API!');
+  res.send('HELLO FROM NODE API!');
 });
