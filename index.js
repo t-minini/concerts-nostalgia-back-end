@@ -6,11 +6,11 @@ const app = express();
 
 connectDB();
 
-// MIDDLEWARES
+// middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// ROUTES
+// routes
 app.use('/concerts', concertRoute);
 
 app.get('/', (req, res) => {

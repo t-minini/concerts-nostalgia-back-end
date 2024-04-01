@@ -1,6 +1,6 @@
 import ConcertModel from './../models/concert.model.js';
 
-// GET ALL CONCERTS
+// get all concerts 
 export const getConcerts = async (req, res) => {
   try {
     const concerts = await ConcertModel.find({});
@@ -10,7 +10,7 @@ export const getConcerts = async (req, res) => {
   }
 };
 
-// GET ONE CONCERT
+// get a concert
 export const getConcert = async (req, res) => {
   try {
     const { id } = req.params;
@@ -25,7 +25,7 @@ export const getConcert = async (req, res) => {
   }
 };
 
-// ADD A CONCERT
+// add a concert
 export const addConcert = async (req, res) => {
   try {
     const newConcert = await ConcertModel.create(req.body);
@@ -35,7 +35,7 @@ export const addConcert = async (req, res) => {
   }
 };
 
-// EDIT A CONCERT
+// edit a concert
 export const editConcert = async (req, res) => {
   try {
     const { id } = req.params;
@@ -50,7 +50,7 @@ export const editConcert = async (req, res) => {
   }
 };
 
-// DELETE A CONCERT
+// delete a concert
 export const deleteConcert = async (req, res) => {
   try {
     const { id } = req.params;
