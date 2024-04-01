@@ -1,49 +1,50 @@
 import { Schema, model } from 'mongoose';
 
-const concertSchema = Schema({
-  concert: {
-    type: String,
-    required: [true, 'Please, enter Concert!'],
+const concertSchema = Schema(
+  {
+    concert: {
+      type: String,
+      required: [true, 'Please, enter concert!'],
+    },
+    artist: {
+      type: String,
+      required: [true, 'Please, enter artist!'],
+    },
+    date: {
+      type: Date,
+      required: [true, 'Please, enter concert date!'],
+    },
+    location: {
+      type: String,
+      required: [true, 'Please, enter location!'],
+    },
+    city: {
+      type: String,
+      required: [true, 'Please, enter city!'],
+    },
+    country: {
+      type: String,
+      required: [true, 'Please, enter country!'],
+    },
+    companion: {
+      type: String,
+      required: false,
+      default: 'Alone',
+    },
+    rating: {
+      type: Number,
+      required: [true, 'Please, enter rating!'],
+      enum: [1, 2, 3, 4, 5],
+    },
+    images: {
+      type: String,
+      required: false,
+    },
   },
-  artist: {
-    type: String,
-    required: [true, 'Please, enter Artist!'],
-  },
-  date: {
-    type: Date,
-    required: [true, 'Please, enter Date!'],
-  },
-  location: {
-    type: String,
-    required: [true, 'Please, enter Location!'],
-  },
-  city: {
-    type: String,
-    required: [true, 'Please, enter City!'],
-  },
-  country: {
-    type: String,
-    required: [true, 'Please, enter Country!'],
-  },
-  companion: {
-    type: String,
-    required: [true, 'Please, enter who you came to the concert with!'],
-    default: 'Alone',
-  },
-  rating: {
-    type: Number,
-    required: [true, 'Please, enter Rating!'],
-    enum: [1, 2, 3, 4, 5],
-  },
-  images: {
-    type: String,
-    required: false,
-  },
-  dateCreated: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 const ConcertModel = model('Concert', concertSchema);
 
