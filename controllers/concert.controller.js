@@ -1,6 +1,6 @@
 import ConcertModel from './../models/concert.model.js';
 
-// get all concerts 
+// get all concerts
 export const getConcerts = async (req, res) => {
   try {
     const concerts = await ConcertModel.find({});

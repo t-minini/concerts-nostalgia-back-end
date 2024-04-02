@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import { connectDB } from './config/db.config.js';
-import concertRoute from './routes/concert.route.js';
+import concertRouter from './routes/concert.route.js';
 const app = express();
 
 connectDB();
@@ -9,9 +9,7 @@ connectDB();
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-// routes
-app.use('/concerts', concertRoute);
+app.use('/concerts', concertRouter);
 
 app.get('/', (req, res) => {
   res.send('HELLO FROM NODE API!');
