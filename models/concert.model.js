@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 
 const concertSchema = Schema(
   {
-    concert: {
+    tour: {
       type: String,
       required: [true, 'Please, enter concert!'],
     },
@@ -10,8 +10,8 @@ const concertSchema = Schema(
       type: String,
       required: [true, 'Please, enter artist!'],
     },
-    date: {
-      type: Date,
+    year: {
+      type: Number,
       required: [true, 'Please, enter concert date!'],
     },
     location: {
@@ -26,11 +26,13 @@ const concertSchema = Schema(
       type: String,
       required: [true, 'Please, enter country!'],
     },
-    companion: {
-      type: String,
-      required: false,
-      default: 'Alone',
-    },
+    companion: [
+      {
+        type: String,
+        required: false,
+        default: 'Alone',
+      },
+    ],
     rating: {
       type: Number,
       required: [true, 'Please, enter rating!'],
