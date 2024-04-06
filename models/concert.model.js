@@ -16,7 +16,7 @@ const concertSchema = Schema(
     },
     location: {
       type: String,
-      required: [true, 'Please, enter location!'],
+      required: [false, 'Please, enter location!'],
     },
     city: {
       type: String,
