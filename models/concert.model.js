@@ -42,6 +42,17 @@ const concertSchema = Schema(
       type: String,
       required: false,
     },
+    background: {
+      type: String,
+      required: true,
+      enum: [
+        'background-one',
+        'background-two',
+        'background-three',
+        'background-four',
+        'background-five',
+      ], 
+    },
   },
   {
     timestamps: true,
