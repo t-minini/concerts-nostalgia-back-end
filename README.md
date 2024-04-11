@@ -29,7 +29,7 @@ API designed and developed to enhance the functionality of "Concerts Nostalgia",
 | **GET**    | /concerts/:id        | _To retrieve details of a single concert_  |
 | **POST**   | /concerts/add        | _To create a new concert_                  |
 | **PUT**    | /concerts/edit/:id   | _To edit the details of a single concert_  |
-| **DELETE** | /concerts/causes/:id | _To delete a single concert_               |
+| **DELETE** | /concerts/delete/:id | _To delete a single concert_               |
 
 ### Technologies Used
 
